@@ -1,0 +1,26 @@
+@if (project(); as proj) {
+  <div class="phases-page">
+    <app-project-header [project]="proj" />
+
+    <section class="timeline-section">
+      <h2 class="section-title">Phases</h2>
+      <app-phase-timeline
+        [phases]="phases()"
+        [selectedPhase]="selectedPhase()"
+        (phaseSelected)="onPhaseSelected($event)"
+      />
+    </section>
+
+    <section class="grid-section">
+      <h2 class="section-title">
+        Work Items
+        @if (selectedPhase(); as phase) {
+          <span class="section-subtitle">— {{ phase.name }}</span>
+        }
+      </h2>
+      <app-work-items-grid [workItems]="workItems()" />
+    </section>
+  </div>
+} @else {
+  <div class="loading">Loading project…</div>
+}

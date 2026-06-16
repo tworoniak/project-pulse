@@ -1,0 +1,40 @@
+<div class="project-header">
+  <div class="header-top">
+    <a class="back-link" routerLink="/projects" aria-label="Back to Projects">
+      ← Back to Projects
+    </a>
+    <div class="header-title">
+      <h1 class="project-name">{{ project().name }}</h1>
+      <span class="status-chip" [ngClass]="'status-' + project().status">
+        {{ statusLabel(project().status) }}
+      </span>
+    </div>
+  </div>
+
+  <div class="header-meta">
+    <span class="meta-item">
+      <span class="meta-label">Owner</span>
+      <span class="meta-value">{{ project().owner }}</span>
+    </span>
+    <span class="meta-divider" aria-hidden="true"></span>
+    <span class="meta-item">
+      <span class="meta-label">Due</span>
+      <span class="meta-value">{{ project().dueDate | date:'mediumDate' }}</span>
+    </span>
+    <span class="meta-divider" aria-hidden="true"></span>
+    <span class="meta-item">
+      <span class="meta-label">Progress</span>
+      <span class="meta-value">{{ project().progress }}%</span>
+    </span>
+    <div
+      class="progress-bar-wrap"
+      role="progressbar"
+      [attr.aria-valuenow]="project().progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [attr.aria-label]="'Project progress: ' + project().progress + '%'"
+    >
+      <div class="progress-bar-fill" [style.width.%]="project().progress"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="timeline" role="list" aria-label="Project phases">
+  @for (phase of phases(); track phase.id; let last = $last) {
+    <div class="timeline-item" role="listitem">
+      <button
+        class="phase-step"
+        [ngClass]="['status-' + phase.status, isSelected(phase) ? 'selected' : '']"
+        (click)="selectPhase(phase)"
+        [attr.aria-pressed]="isSelected(phase)"
+        [attr.aria-label]="phase.name + ' — ' + phase.status + ', ' + phase.completionPct + '% complete'"
+      >
+        <span class="phase-icon" aria-hidden="true">{{ statusIcons[phase.status] }}</span>
+        <span class="phase-name">{{ phase.name }}</span>
+        <span class="phase-pct">{{ phase.completionPct }}%</span>
+      </button>
+      @if (!last) {
+        <span class="connector" aria-hidden="true"></span>
+      }
+    </div>
+  }
+</div>
