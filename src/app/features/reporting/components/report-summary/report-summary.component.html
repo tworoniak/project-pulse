@@ -1,0 +1,18 @@
+<div class="kpi-grid" role="list" aria-label="Report summary">
+  <div class="kpi-card" role="listitem">
+    <span class="kpi-value">{{ totalPhases() }}</span>
+    <span class="kpi-label">Total Phases</span>
+  </div>
+  <div class="kpi-card" role="listitem">
+    <span class="kpi-value">{{ overallProgress() }}%</span>
+    <span class="kpi-label">Overall Progress</span>
+  </div>
+  <div class="kpi-card kpi-card--success" role="listitem">
+    <span class="kpi-value">{{ onTrack() }}</span>
+    <span class="kpi-label">On Track</span>
+  </div>
+  <div class="kpi-card kpi-card--danger" role="listitem">
+    <span class="kpi-value">{{ blocked() }}</span>
+    <span class="kpi-label">Blocked</span>
+  </div>
+</div>
