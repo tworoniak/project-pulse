@@ -1,0 +1,8 @@
+<ag-grid-angular
+  class="projects-grid"
+  [theme]="theme"
+  [rowData]="projects()"
+  [columnDefs]="columns"
+  [gridOptions]="gridOptions"
+  (gridReady)="onGridReady($event)"
+/>

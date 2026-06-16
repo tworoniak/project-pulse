@@ -1,0 +1,10 @@
+<div class="projects-page">
+  <header class="page-header">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">All active and archived projects</p>
+  </header>
+
+  <div class="grid-wrapper">
+    <app-projects-grid [projects]="(projects$ | async) ?? []" />
+  </div>
+</div>
