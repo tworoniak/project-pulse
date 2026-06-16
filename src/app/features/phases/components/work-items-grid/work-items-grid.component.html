@@ -1,0 +1,8 @@
+<ag-grid-angular
+  class="work-items-grid"
+  [theme]="theme"
+  [rowData]="workItems()"
+  [columnDefs]="columns"
+  [gridOptions]="gridOptions"
+  (gridReady)="onGridReady($event)"
+/>
