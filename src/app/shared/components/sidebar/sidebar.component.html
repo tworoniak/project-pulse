@@ -1,0 +1,28 @@
+<nav class="sidebar" [class.sidebar--collapsed]="!open()" aria-label="Main navigation">
+  <ul class="sidebar__nav" role="list">
+    @for (item of navItems; track item.label) {
+      <li>
+        <a
+          class="sidebar__link"
+          [routerLink]="item.route"
+          routerLinkActive="sidebar__link--active"
+          [attr.title]="!open() ? item.label : null"
+          [attr.aria-label]="item.label"
+        >
+          <svg
+            class="sidebar__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path [attr.d]="item.iconPath" />
+          </svg>
+          <span class="sidebar__label">{{ item.label }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
