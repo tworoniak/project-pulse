@@ -6,6 +6,7 @@
           class="sidebar__link"
           [routerLink]="item.route"
           routerLinkActive="sidebar__link--active"
+          [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
           [attr.title]="!open() ? item.label : null"
           [attr.aria-label]="item.label"
         >

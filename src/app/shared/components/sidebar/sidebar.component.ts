@@ -5,6 +5,7 @@ interface NavItem {
   label: string;
   route: string;
   iconPath: string;
+  exact?: boolean;
 }
 
 @Component({
@@ -27,11 +28,12 @@ export class SidebarComponent {
     {
       label: 'Projects',
       route: '/projects',
+      exact: true,
       iconPath: 'M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z',
     },
     {
       label: 'Reports',
-      route: '/projects',
+      route: '/reports',
       iconPath: 'M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z',
     },
     {
