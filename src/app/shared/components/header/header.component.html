@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="header__left">
+    <button
+      class="header__toggle"
+      (click)="toggleSidebar.emit()"
+      [attr.aria-label]="sidebarOpen() ? 'Collapse sidebar' : 'Expand sidebar'"
+      [attr.aria-expanded]="sidebarOpen()"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
+    <div class="header__brand">
+      <span class="header__logo" aria-hidden="true">PP</span>
+      <span class="header__title">ProjectPulse</span>
+    </div>
+  </div>
+  <div class="header__right">
+    <div
+      class="header__avatar"
+      role="img"
+      aria-label="User avatar"
+      title="User avatar"
+    >
+      TW
+    </div>
+  </div>
+</header>
