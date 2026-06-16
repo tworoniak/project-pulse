@@ -16,27 +16,27 @@ import { Project } from '../../../../../shared/models/project.model';
     </a>
   `,
   styles: [`
-    .btn-view {
-      display: inline-flex;
+    :host {
+      display: flex;
       align-items: center;
-      padding: 4px 12px;
-      background: rgba(108, 142, 245, 0.12);
+      height: 100%;
+    }
+    .btn-view {
       color: #6c8ef5;
-      border: 1px solid rgba(108, 142, 245, 0.25);
-      border-radius: 4px;
       font-size: 12px;
       font-weight: 500;
       text-decoration: none;
       cursor: pointer;
-      transition: background 200ms ease, border-color 200ms ease;
+      transition: color 150ms ease;
     }
     .btn-view:hover {
-      background: rgba(108, 142, 245, 0.2);
-      border-color: rgba(108, 142, 245, 0.45);
+      color: #8faaf8;
+      text-decoration: underline;
     }
     .btn-view:focus-visible {
       outline: 2px solid #6c8ef5;
       outline-offset: 2px;
+      border-radius: 2px;
     }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
