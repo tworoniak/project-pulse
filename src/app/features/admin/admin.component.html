@@ -1,0 +1,15 @@
+<div class="admin-page">
+  <header class="page-header">
+    <div class="header-text">
+      <h1 class="page-title">User Management</h1>
+      <p class="page-subtitle">Add, edit, and remove user accounts</p>
+    </div>
+    <button mat-flat-button color="primary" (click)="openAddUserDialog()" aria-label="Add new user">
+      + Add User
+    </button>
+  </header>
+
+  <div class="grid-wrapper">
+    <app-users-grid />
+  </div>
+</div>
