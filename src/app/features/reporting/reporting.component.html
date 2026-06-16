@@ -1,0 +1,33 @@
+@if (project(); as proj) {
+  <div class="report-page">
+    <header class="report-header">
+      <div class="report-title">
+        <h1 class="project-name">{{ proj.name }}</h1>
+        <span class="report-label">Progress Report</span>
+      </div>
+      <button
+        class="export-btn"
+        type="button"
+        (click)="onExport()"
+        aria-label="Export report as CSV"
+      >
+        Export CSV
+      </button>
+    </header>
+
+    <app-report-summary [phases]="phases()" />
+
+    <section class="grid-section">
+      <h2 class="section-title">Work Items by Phase</h2>
+      <app-report-grid [phases]="phases()" [workItems]="workItems()" />
+    </section>
+  </div>
+} @else {
+  <div class="empty-state">
+    @if (hasProjectId()) {
+      Loading report…
+    } @else {
+      Select a project to view its progress report.
+    }
+  </div>
+}
