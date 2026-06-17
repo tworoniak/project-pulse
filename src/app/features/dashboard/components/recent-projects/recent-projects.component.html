@@ -1,0 +1,11 @@
+<div class="recent-projects">
+  <ag-grid-angular
+    [rowData]="topProjects()"
+    [columnDefs]="columns"
+    [theme]="theme"
+    [gridOptions]="gridOptions"
+    class="projects-grid"
+    (gridReady)="onGridReady($event)"
+    (rowClicked)="onRowClicked($event)"
+  />
+</div>
