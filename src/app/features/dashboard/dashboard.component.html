@@ -1,0 +1,20 @@
+<div class="dashboard">
+  <header class="dashboard-header">
+    <h1 class="page-title">Dashboard</h1>
+  </header>
+
+  <app-kpi-cards [projects]="projects()" />
+
+  <section class="dashboard-section">
+    <h2 class="section-title">Projects by Status</h2>
+    <app-status-breakdown [projects]="projects()" />
+  </section>
+
+  <section class="dashboard-section">
+    <div class="section-header">
+      <h2 class="section-title">Priority Projects</h2>
+      <a routerLink="/projects" class="view-all-link" aria-label="View all projects">View All →</a>
+    </div>
+    <app-recent-projects [projects]="projects()" />
+  </section>
+</div>

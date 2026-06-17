@@ -1,0 +1,21 @@
+<div class="breakdown" role="list" aria-label="Projects by status">
+  @for (row of rows(); track row.key) {
+    <div class="breakdown-row" role="listitem">
+      <span class="breakdown-label">{{ row.label }}</span>
+      <div
+        class="bar-track"
+        role="progressbar"
+        [attr.aria-valuenow]="row.count"
+        [attr.aria-valuemax]="projects().length"
+        [attr.aria-label]="row.label + ': ' + row.count + ' projects'"
+      >
+        <div
+          class="bar-fill"
+          [style.width]="row.pct + '%'"
+          [style.background]="row.color"
+        ></div>
+      </div>
+      <span class="breakdown-count">{{ row.count }}</span>
+    </div>
+  }
+</div>
